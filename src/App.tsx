@@ -76,7 +76,7 @@ export default function App() {
           <span className="badge">Commission Open</span>
           <div className="title-glow">
             <img
-              src="/src/assets/minecraft_title.png"
+              src="https://imgur.com/a/GyFCzIK"
               alt="Sovereign Studio"
               className="title-image"
             />
