@@ -1,0 +1,244 @@
+/* ================= GOOGLE FONTS ================= */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap");
+
+/* ================= RESET ================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #111;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+/* ================= PAGE ================= */
+.page {
+  min-height: 100vh;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.navbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-logo {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.navbar-menu a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.navbar-menu a:hover {
+  opacity: 0.7;
+}
+
+.nav-cta {
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: #d42c34;
+  color: #fff !important;
+  font-weight: 600;
+}
+
+/* ================= HERO ================= */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: url("/src/assets/hero-bg.png") center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.55) 30%,
+    rgba(255, 255, 255, 0.15) 55%,
+    rgba(255, 255, 255, 0) 75%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+/* ================= BADGE ================= */
+.badge {
+  background: rgba(0, 0, 0, 0.55);
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+/* ================= TITLE ================= */
+.title-glow {
+  position: relative;
+}
+
+.title-image {
+  max-width: 520px;
+  width: 100%;
+  display: block;
+}
+
+.title-glow::before {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.55) 30%,
+    rgba(255, 255, 255, 0.15) 55%,
+    rgba(255, 255, 255, 0) 75%
+  );
+  filter: blur(56px);
+  z-index: -1;
+}
+
+/* ================= RUNNING TEXT (REAL MARQUEE) ================= */
+.running-text {
+  width: 100vw; /* FULL layar, bukan ikut container */
+  overflow: hidden;
+  background: linear-gradient(
+    90deg,
+    #b61f27 0%,
+    #d42c34 50%,
+    #b61f27 100%
+  );
+  color: #fff;
+  padding: 12px 0;
+  border-top: 2px solid #ff6a6f;
+  border-bottom: 2px solid #ff6a6f;
+}
+
+/* the moving line */
+.running-inner {
+  display: inline-flex;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 22s linear infinite;
+}
+
+.running-inner span {
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+.marquee-item {
+  margin-right: 40px;
+}
+
+/* ================= ABOUT SECTION ================= */
+.about {
+  background: #f7f9fc;
+  padding: 100px 24px;
+  text-align: center;
+}
+
+.about-top-text {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.about-logos {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin-bottom: 72px;
+}
+
+.about-logos img {
+  height: 40px;
+  opacity: 0.6;
+}
+
+.about-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.about-divider {
+  width: 36px;
+  height: 3px;
+  background: #d42c34;
+  margin: 18px auto 32px;
+}
+
+.about-description {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 28px;
+  }
+
+  .navbar-menu {
+    gap: 16px;
+  }
+
+  .running-inner span {
+    font-size: 12px;
+  }
+}
